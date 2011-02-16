@@ -1,0 +1,21 @@
+[user]
+	name = Alexander Zhuravlev
+	email = zaa@ikato.com
+[diff]
+
+[color]
+	ui = auto
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	di = diff
+	dc = diff --cached
+	amend = commit --amend
+
+[merge]
+	tool = opendiff
+
+[core]
+	editor = vim
