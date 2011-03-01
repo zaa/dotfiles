@@ -1,0 +1,100 @@
+# Gmail IMAP
+set imap_user = "a.zhuravlev@gmail.com"
+set imap_pass = "********"
+set certificate_file=~/.mutt/certificates
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "imaps://imap.gmail.com:993/INBOX"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts" 
+unset record
+set imap_check_subscribed="yes" 
+set imap_list_subscribed="yes" 
+set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+
+set from="zaa@aboutecho.com"
+set realname="Alexander Zhuravlev"
+
+set smtp_url = "smtp://a.zhuravlev@smtp.gmail.com:587/"
+set smtp_pass = "********"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+
+set send_charset="utf-8"
+set auto_tag
+set arrow_cursor=no
+set autoedit
+set fast_reply
+set edit_headers
+set copy=yes
+set delete=no
+set move=no
+set include=yes
+set nomark_old
+set sort_browser=reverse-date
+set quote_regexp="^ *[a-zA-Z]*>"
+set nosave_empty
+set abort_unmodified=yes
+set signature="~/.mutt/.sign"
+set sig_dashes=no
+set alias_file="~/.mutt/.aliases"
+set abort_nosubject=no
+set pager_stop
+set quit=yes
+set nowait_key
+set nobeep
+set beep_new=yes
+set index_format="%4C %Z %3M %[%b %d] %-20.20L (%4c) %s"
+set status_on_top
+set help=no
+set mail_check=5
+set timeout=10
+set askcc=yes
+set indent_string="> "
+set mime_forward=ask-no
+set sleep_time=0
+set tmpdir="~/.mutt/.tmp"
+set forw_format="[fwd] %s (from: %a)"
+set smart_wrap
+
+alternates "a.zhuravlev@gmail.com|zaa@aboutecho.com|zaa@ikato.com"
+
+unset metoo
+unset implicit_autoview
+set mailcap_sanitize
+
+ignore *
+unignore from subject to cc bcc mail-followup-to date x-mailer user-agent X-Spam-Score X-Spam-Status
+unhdr_order *
+hdr_order date to cc from subject x-mailer user-agent
+
+# Lynx-like binds.
+bind  pager   <up>     previous-line
+bind  pager   <down>   next-line
+bind  pager   <left>   exit
+bind  pager   <right>  view-attachments
+bind  attach  <left>   exit
+bind  attach  <right>  view-attach
+bind  index   <right>  display-message
+bind  index   <up>     previous-entry
+bind  index   <down>   next-entry
+macro index   <left>   "c?"
+bind  browser <right>  select-entry
+macro browser <left>   "qc!\r"
+
+bind pager G bottom
+
+color quoted green default
+color header cyan default ^Date:
+color header cyan default ^From:
+color header cyan default ^To:
+color header cyan default ^Subject:
+color header cyan default ^C[cC]:
+
+folder-hook . set sort=threads
+folder-hook . set sort_aux=last-date
+
+charset-hook win-1251 cp1251 
+charset-hook Windows-1251 cp1251
+
+auto_view text/html
+alternative_order text/enriched text/plain text/html
