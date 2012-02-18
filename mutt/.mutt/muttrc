@@ -55,6 +55,7 @@ set sleep_time=0
 set tmpdir="~/.mutt/.tmp"
 set forw_format="[fwd] %s (from: %a)"
 set smart_wrap
+set folder_format="%3C %4N %f"
 
 alternates "a.zhuravlev@gmail.com|zaa@aboutecho.com|zaa@ikato.com"
 
