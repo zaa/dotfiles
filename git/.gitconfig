@@ -7,11 +7,11 @@
 	ui = auto
 
 [alias]
-	st = status
+	d = diff --no-prefix
+	dc = diff --cached --no-prefix
+	s = status -sb
 	ci = commit
 	co = checkout
-	di = diff
-	dc = diff --cached
 	amend = commit --amend
 
 [merge]
